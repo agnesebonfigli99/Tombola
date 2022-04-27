@@ -16,7 +16,7 @@ class Tabellone(object):
 
     """
 
-    def __init__(self, n, cartellone=None):
+    def __init__(self, n):
 
         self.n = n
         self.extracted = []
