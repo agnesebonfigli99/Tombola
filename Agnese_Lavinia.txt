@@ -1,1 +1,4 @@
 Tasks di Agnese e Lavinia : 
+- Estrattore (T)
+- Cartellone
+- Giocatore
