@@ -55,3 +55,8 @@ class Tabellone(object):
             return x
         else:
             raise StopIteration
+
+    def print_x(self):
+        x = random.randint(1, self.n)
+        print(x)
+
