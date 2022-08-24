@@ -1,4 +1,4 @@
-"Prima versione"
+
 "Creazione classe Cartellone"
 " il Cartellone contiene 6 cartelle di dimensione 3x5 contenenti i numeri da 1 a 90 ordinati.Per convenzione sarà realizzando" \
 " con 3 coppie di cartelle adicenti"
