@@ -115,11 +115,3 @@ class Cartellone:
 
 
 
-
-
-
-
-
-
-
-

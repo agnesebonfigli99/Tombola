@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug 24 13:48:20 2022
-
-@author: agnes
-"""
-
 import numpy as np
 
 '''Classe Giocatore: 
@@ -99,5 +92,4 @@ class Giocatore:
           
         
         
-        
-        
+       
