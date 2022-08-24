@@ -9,7 +9,7 @@ In particolare deve:
 - poter creare gruppi di 6 cartelle con le caratteristiche specificate di seguito;
 - poter registrare N giocatori;
 - poter assegnare un numero M di cartelle a ciascun giocatore (ogni giocatore può avere assegnate un numero diverso di cartelle, per seplicità si può supporre che M non possa essere maggiore di un valore predefinito);
-- poter verificare se un numero estratto è presente in una cartella e, se è presente, verificare se si è fatto ambo, terna, quaterna, cinquina o tombola e se uno di questi risultati risulta non ancora raggiunto
+- poter verificare se un numero estratto è presente in una cartella e, se è presente, verificare se si è fatto ambo, terna, quaterna, cinquina o tombola e se uno di questi risultati risulta non ancora raggiunto (Giocatore, deve dire il numero di cartelle che vuole senza superare il valore predefinito scelto dal Banco)
 - iniziare il gioco estraendo un numero alla volta e verificando ogni volta se qualche giocatore ha realizzato un ambo, una terna, una quaterna, una cinquina o una tombola; per semplicità si può supporre che al più un giocatore può realizzare uno di questi risultati dopo ogni estrazione;
 - terminare il gioco quando un giocatore ha realizzato una tombola.
 
