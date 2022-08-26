@@ -88,7 +88,7 @@ class Giocatore:
                       elif self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == 0: ''''numero estratto contrassegnato con *''''
                           print('*', end='')
                       else:
-                          print(int(self.cartelle_assegnate[i].elemento_cartella(riga,colonna)),end=' ')
+                          print(int(self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna)),end=' ')
                   print(']')
                           
                     
