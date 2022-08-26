@@ -72,7 +72,8 @@ class Giocatore:
           return vincita
       
       '''Metodo Visualizza Cartella Giocatore per vedere quali numeri sono stati segnati e per visualizzare
-      le cartelle nel complesso'''
+      le cartelle nel complesso
+      Se nella casella è presente -1 signica che è vuota'''
       def visualizza_cartelle_giocatore(self): 
           print(f"\nCartelle di {self.username} : \n")
           for i in range(1,len(self.cartelle_assegnate)): 
