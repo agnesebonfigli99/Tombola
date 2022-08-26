@@ -7,6 +7,9 @@ import numpy as np
     - verifica cartella  '''
     
 class Giocatore: 
+    ''''username: username associato al giocatore
+        n_cartelle: numero (int) di cartelle richieste dal giocatore
+        cartelle_assegnate: lista inizialmente vuota che conterrà le cartelle assegnate al giocatore''''
     
     def __init__(self,username,n_cartelle, cartelle_assegnate = None):
         self.username = username 
@@ -20,27 +23,26 @@ class Giocatore:
         self.cartelle_assegnate.append(nuova_cartella)
         
     ''' Metodo Check Numero
-    Dopo aver estratto il numero (intero) si controlla se le sue cartelle lo possiedono.
+    Dopo aver estratto il numero (intero) il giocatore controlla se le sue cartelle lo possiedono.
     0 --> al posto del numero estratto presente sulla cartella ''' 
     
     def check_num(self, num_estratto): 
         for i in range(0,len(self.cartelle_assegnate)):
             for riga in range(0,3):
-                if self.cartelle_assegnate[i].cartella[riga][colonna]==num_estratto:    # Se la cartella presenta il numero
+                if self.cartelle_assegnate[i].cartella[riga][colonna]==num_estratto:    ''''l'iesima cartella della lista di cartelle del giocatore
+                                                                                         presenta in una posizione (individuata da riga e colonna) il numero estratto''''
                     self.cartelle_assegnate[i].cartella[riga][colonna]=0 
         
     ''' Metodo Check Vincita: 
         Controllo delle vincite(interi, 2--> ambo, 3--> terno...) del giocatore'''
-        
+   ''''Per la verifica della Tombola si verifica che nella cartella siano presenti solo 0 (n estratto) e -1 (casella vuota)''''     
     def check_vincita(self,vincita): 
          for i in range(self.n_cartelle):
             if vincita==5
-                                    # vedo se si è verificata la tombola: 
-                                    # cioe i valori contenuti nella cartella 
-                                    # sono solo 0 e -1
+                                    
                 occorenze = np.unique(self.cartelle_assegnate[i].cartella)
                 
-                if len(occorenze)==2: 
+                if len(occorenze)==2: ''''quindi ci sono solo 0 e -1''''
                     
                     print('Tombola!')
                     vincita = 6     
@@ -81,12 +83,12 @@ class Giocatore:
               for riga in range(3): 
                   print('[', end='')
                   for colonna in range(9): 
-                      if self.cartelle_assegnate[i].elemento_cartella(riga,colonna) == -1: 
+                      if self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == -1: ''''casella vuota--> stampa spazio vuoto''''
                           print(' ', end='')
-                      elif self.cartelle_assegnate[i].elemento_cartella(riga,colonna) == 0: 
+                      elif self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == 0: ''''numero estratto contrassegnato con *''''
                           print('*', end='')
                       else:
-                          print(int(self.cartelle_assegnate[i].elemento_cartella(riga,colonna)),end=' ')
+                          print(int(self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna)),end=' ')
                   print(']')
                           
                     
