@@ -103,11 +103,11 @@ class Cartella:
         return self.cartella
 
 
-    "Metodo check_numero_cart: metodo che restituisce un booleano al fine di controllare se il numero nella posizione specificata" \
+    "Metodo numero_estratto: metodo che restituisce un booleano al fine di controllare se il numero nella posizione specificata" \
     "da indice riga e indice colonna è già stato estratto" \
     "True--> numero estratto (=0 per convenzione del programma)"
 
-    def check_numero_cartella(self,i_riga,i_colonna):
+    def numero_estatto(self,i_riga,i_colonna):
         if self.cartella[i_riga][i_colonna]==0:
             return True
         else:
