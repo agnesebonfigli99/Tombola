@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import random
-import untitled6
+import Cartella
 
 class Gruppo_Cartelle:
 
