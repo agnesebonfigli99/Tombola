@@ -24,7 +24,7 @@ class Sacchetto:
         print(f"il sacchetto è", self.n_sacchetto)
         
     """
-    Metodo estrai numero: metodo che estrae un numero dal sacchetto e lo aggiunge ad una lista. 
+    Metodo estrai numero: metodo che estrae un numero dal sacchetto senza ripetizioni e lo aggiunge ad una lista. 
     In modo che il numero di estrazioni non superi il numero di elementi contenuti nel sacchetto. 
     """
     
@@ -36,7 +36,7 @@ class Sacchetto:
 
             self.estratto = self.n_sacchetto[0] #il numero estratto è il primo numero della lista n_sacchetto di cui abbiamo cambiato l'ordine.
 
-            self.n_sacchetto.pop(0) #rimuovo l'elemento dal sacchetto in modo che non ci siano ripetizioni
+            self.n_sacchetto.pop(0) #rimuovo l'elemento estratto dal sacchetto in modo che non ci siano ripetizioni nell'estrazioni
 
             l.append(self.estratto) #lista riempita
 
