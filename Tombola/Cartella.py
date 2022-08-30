@@ -26,7 +26,7 @@ import numpy as np
 
 class Cartella:
 
-    def __int__(self, cartella=None, contatore_elem_c=None, contatore_elem_r=None):
+    def __init__(self, cartella=None, contatore_elem_c=None, contatore_elem_r=None):
 
         self.cartella = np.zeros((3, 9))
 
@@ -39,9 +39,9 @@ class Cartella:
 
     def incrementa_contatore(self, i_riga, i_colonna):
 
-        # i_riga: indice della riga (int)
+        #i_riga: indice della riga (int)
 
-        # i_colonna=indice della colonna (int)
+        #i_colonna=indice della colonna (int)
 
         self.contatore_elem_r[i_riga] += 1
 
