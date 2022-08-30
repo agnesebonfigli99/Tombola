@@ -1,9 +1,9 @@
 #  Developer: $ Lavinia
 # -*- coding: utf-8 -*-
 
-#Creazione classe Cartellone
-#il Cartellone contiene 6 cartelle di dimensione 3x5 contenenti i numeri da 1 a 90 ordinati.Per convenzione sarà realizzando
-# con 3 coppie di cartelle adicenti
+"""Creazione classe Cartellone
+il Cartellone contiene 6 cartelle di dimensione 3x5 contenenti i numeri da 1 a 90 ordinati.Per convenzione sarà realizzando
+ con 3 coppie di cartelle adicenti"""
 
 import numpy as np
 
@@ -11,21 +11,21 @@ class Cartellone:
     def __init__(self, cartellone=None):  #in questo modo il costruttore crea un solo oggetto cartellone in fase di esecuzione
         self.cartellone=[]  #martice vuota"
 
-    # Metodo crea_cartellone: il metodo crea il cartellone generando le cartelle che lo costituiscono (martici 3x5)
+    """ Metodo crea_cartellone: il metodo crea il cartellone generando le cartelle che lo costituiscono (martici 3x5) """
     def crea_cartellone(self):
-        #inizializzazione delle 6 cartelle come matricidi zeri 3x5"
+        #inizializzazione delle 6 cartelle come matricidi zeri 3x5
         for i in range(6):
             cartelle=np.zeros((3,5))
             self.cartellone.append(cartelle)
 
-     #RIEMPIMENTO CARTELLE CON NUMERI DA 1 A 90 IN ORDINE CRESCENTE
-       #riempimento prima riga della prima caretlla della parte sx con numeri da 1 a 5,
-       #rimepimento prima riga della prima cartella della parte dx con numeri da 6 a 10
+     """RIEMPIMENTO CARTELLE CON NUMERI DA 1 A 90 IN ORDINE CRESCENTE
+        riempimento prima riga della prima caretlla della parte sx con numeri da 1 a 5,
+        rimepimento prima riga della prima cartella della parte dx con numeri da 6 a 10"""
         p_sx=list((range(1,6)))
         p_dx=list((range(6,11)))
 
-        #per completare il riempimento delle cartelle tutte le righe seguenti vengono generate moltiplicando x10 le prime due
-        # (a seconda della posizione destra o sinitra)
+        """per completare il riempimento delle cartelle tutte le righe seguenti vengono generate moltiplicando x10 le prime due
+         (a seconda della posizione destra o sinitra) """
 
         for i in range(6):
             #le 3 cartelle sul lato sx del cartellone sono identificate da indice pari (i=0, i=2, i=4)
@@ -65,17 +65,17 @@ class Cartellone:
                               self.cartellone[i][riga][index] = p_dx[index] + (riga + i + 1) * 10
 
 
-    #metodo per verificare le vincite effettuate dal cartellone
+    """metodo per verificare le vincite effettuate dal cartellone"""
 
     def verifica_vincite_cartellone(self,vincita,id_cartella):
-        #attributi:" \
-        #vincita: intero indicante la vincita, 2--> ambo 3--> terno, ecc..
-        #id_cartella: intero che identifica la cartella a cui appartiene il numero estratto, cioè la cartella per la quale si
-        #verifica la vincita
+        """attributi:" \
+         vincita: intero indicante la vincita, 2--> ambo 3--> terno, ecc..
+         id_cartella: intero che identifica la cartella a cui appartiene il numero estratto, cioè la cartella per la quale si
+         verifica la vincita """
 
-         #input: vincita, id_cartella
-         #output: vincita
-         #quando il numero viene estratto viene sostituito con 0
+         """input: vincita, id_cartella
+          output: vincita
+         quando il numero viene estratto viene sostituito con 0"""
 
         if vincita==5:
             occorrenze=np.unique(self.cartellone[id_cartella]) #per verificare la vincita
