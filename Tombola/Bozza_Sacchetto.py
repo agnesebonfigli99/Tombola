@@ -16,7 +16,7 @@ class Sacchetto:
     n_sacchetto=[]
     #n_sacchetto= lista che rappresenta il sacchetto contenente i numeri da 1 a 90"
 
-    def __int__(self,pesca=None):
+    def __init__(self,pesca=None):
         self.pesca=Sacchetto.n_sacchetto
         for i in range(1,91):
             self.pesca.append(i)
