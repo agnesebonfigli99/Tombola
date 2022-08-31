@@ -65,7 +65,8 @@ class Cartellone:
                               self.cartellone[i][riga][index] = p_dx[index] + (riga + i + 1) * 10
 
 
-    """metodo per verificare le vincite effettuate dal cartellone"""
+    """metodo verifica_vincite_cartellone
+     per verificare le vincite effettuate dal cartellone"""
 
     def verifica_vincite_cartellone(self,vincita,id_cartella):
         """attributi:" \
