@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sun Aug 28 10:54:35 2022
+Created on Wed Aug 31 12:31:39 2022
 
 @author: mcudi
 """
+
 import random
 import Cartella
 
@@ -12,31 +13,28 @@ class Gruppo_Cartelle:
     '''
     Si deve generare un gruppo di sei cartelle diverse, senza ripetizioni di numeri.
     
-    E' necessario che gli elementi sulla prima colonna delle 6 cartelle di un gruppo siano pari a 9.
-    La somma degli elementi dell'ultima colonna invece è 11 (80 a 90 inclusi).
-    Sulle altre colonne la somma degli elementi deve essere pari a 10.
-    Va generato un gruppo che rispetta tutte le condizioni. 
-    Se non è così si reitera il ciclo.
+    E' necessario che la gli elementi sulla prima colonna di un gruppo sia pari a 9.
+    La somma degli elementi dell'ultima colonna invece è 11 (80 a 90 inclusi). Sulle altre colonne la somma degli elementi deve essere pari a 10.
+    Va generato un gruppo che rispetta tutte le condizioni. Se non è così si reitera il ciclo.
   
     '''
 
     def __init__(self):
-         
         '''si inizializza una lista vuota che conterrà sei oggetti ovvero le cartelle'''
         self.lista_cartelle=[]
         '''si riempie la lista; la prima cartella avrà sempre la posizione 2,8 occupata per il numero 90'''
     
-    def lista_cartelle(self):    
+    def lista(self):    
         exit=False
-
         while exit == False:
           cartella=Cartella.genera_cartella()
-          if self.cartella.cartella_occupata(2,8)!=-1:
+          if self.cartella.casella_occupata(2,8)!=1:
              exit=True 
         self.lista_cartelle[0] = cartella     
         for i in range(1,6):
             cartella= Cartella.genera_cartella()
-            self.lista_cartelle.append(cartella)   
+            self.lista_cartelle.append(cartella)
+            return lista_cartelle
     
     '''dato l'indice della cartella desiderata ne permette la selezione'''
     def single_cartella(self,i):
@@ -125,7 +123,7 @@ class Gruppo_Cartelle:
           condiz = self.verifica_colonne_intermedie()
         return self.lista_cartelle
     
-    '''si inseriscono i numeri nelle posizioni diverse da -1''' 
+    '''si inseriscono i numeri nelle posizioni diverse da  1''' 
     def generazione_numeri(self):
      numeri={0:[1,2,3,4,5,6,7,8,9],
          1:[10,11,12,13,14,15,16,17,18,19],
@@ -141,10 +139,19 @@ class Gruppo_Cartelle:
       cartella_da_riempire = self.single_cartella[i]
       for j in range (3):
           for k in range (8):
-            if cartella_da_riempire[j][k] != -1:
+            if cartella_da_riempire[j][k] != 1:
               num = random.choise(numeri[k])
               cartella_da_riempire[j][k] = num 
               numeri[k].remove(num)
-      self.lista_cartelle.append(cartella_da_riempire)  #è necessario generare una nuova variabile? perchè in lista cartelle ho già le sei cartelle con le posizioni e con append vado a mettere in coda un'altra (quella con i numeri)          
+              self.lista_cartelle.append(cartella_da_riempire)
+      
+            elif cartella_da_riempire[j][k] == 1:
+             num = 0
+             cartella_da_riempire [j][k]= num
+      
+        #è necessario generare una nuova variabile? perchè in lista cartelle ho già le sei cartelle con le posizioni e con append vado a mettere in coda un'altra (quella con i numeri)          
      
      return self.lista_cartelle
+
+lista1=Gruppo_Cartelle()
+lista1.lista()
