@@ -12,13 +12,16 @@ class Gruppo_Cartelle:
     '''
     Si deve generare un gruppo di sei cartelle diverse, senza ripetizioni di numeri.
     
-    E' necessario che la gli elementi sulla prima colonna di un gruppo sia pari a 9.
-    La somma degli elementi dell'ultima colonna invece è 11 (80 a 90 inclusi). Sulle altre colonne la somma degli elementi deve essere pari a 10.
-    Va generato un gruppo che rispetta tutte le condizioni. Se non è così si reitera il ciclo.
+    E' necessario che gli elementi sulla prima colonna delle 6 cartelle di un gruppo siano pari a 9.
+    La somma degli elementi dell'ultima colonna invece è 11 (80 a 90 inclusi).
+    Sulle altre colonne la somma degli elementi deve essere pari a 10.
+    Va generato un gruppo che rispetta tutte le condizioni. 
+    Se non è così si reitera il ciclo.
   
     '''
 
     def __init__(self):
+         
         '''si inizializza una lista vuota che conterrà sei oggetti ovvero le cartelle'''
         self.lista_cartelle=[]
         '''si riempie la lista; la prima cartella avrà sempre la posizione 2,8 occupata per il numero 90'''
