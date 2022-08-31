@@ -43,7 +43,7 @@ class Sacchetto:
             print(f"Il numer estratto è", self.estratto, l)
         
 
-uno = Sacchetto()
-uno.mostra_sacchetto()
-uno.estrai_numero()
+estrazione = Sacchetto()
+estrazione.mostra_sacchetto()
+estrazione.estrai_numero()
 
