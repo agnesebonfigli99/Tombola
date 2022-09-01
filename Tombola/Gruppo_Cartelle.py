@@ -12,10 +12,12 @@ class Gruppo_Cartelle:
 
     '''
     Si deve generare un gruppo di sei cartelle diverse, senza ripetizioni di numeri.
-    
-    E' necessario che la gli elementi sulla prima colonna di un gruppo sia pari a 9.
-    La somma degli elementi dell'ultima colonna invece è 11 (80 a 90 inclusi). Sulle altre colonne la somma degli elementi deve essere pari a 10.
-    Va generato un gruppo che rispetta tutte le condizioni. Se non è così si reitera il ciclo.
+     
+    E' necessario che la somma degli elementi sulla prima colonna delle 6 cartelle appartenenti al gruppo sia pari a 9 (1 a 9 inclusi).
+    La somma degli elementi dell'ultima colonna invece è 11 (80 a 90 inclusi).
+    Sulle altre colonne la somma degli elementi deve essere pari a 10 (10 a 20 inclusi ecc).
+    Va generato un gruppo che rispetta tutte le condizioni. 
+    Se non è così si reitera il ciclo.
   
     '''
 
