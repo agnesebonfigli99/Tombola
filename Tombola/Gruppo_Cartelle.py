@@ -141,15 +141,14 @@ class Gruppo_Cartelle:
       cartella_da_riempire = self.single_cartella[i]
       for j in range (3):
           for k in range (8):
-            if cartella_da_riempire[j][k] != 1:
+            if cartella_da_riempire[j][k] == 1:
               num = random.choise(numeri[k])
               cartella_da_riempire[j][k] = num 
               numeri[k].remove(num)
               self.lista_cartelle.append(cartella_da_riempire)
       
-            elif cartella_da_riempire[j][k] == 1:
-             num = 0
-             cartella_da_riempire [j][k]= num
+            else:
+                pass
       
         #è necessario generare una nuova variabile? perchè in lista cartelle ho già le sei cartelle con le posizioni e con append vado a mettere in coda un'altra (quella con i numeri)          
      
