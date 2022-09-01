@@ -37,4 +37,12 @@ class Tavolo:
         for i in range(self.cartelle_richieste):
             self.lista_cartelle_assegnate.append(cartelle_giocatore.single_cartella(i))
             return self.lista_cartelle_assegnate
+      
+    """
+    metodo assegna_cartellone: il banco si occupa anche di assegnare il cartellone
+    """
+    def assegna_cartellone(self):
+        cartellone=Cartellone.Cartellone()
+        cartellone.crea_cartellone()
+        return cartellone
         
