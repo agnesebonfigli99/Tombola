@@ -48,12 +48,12 @@ class Giocatore:
                 if self.cartelle_assegnate[i].cartella[riga][colonna]==num_estratto: 
                     #l'iesima cartella della lista di cartelle del giocatore
                     #presenta in una posizione (individuata da riga e colonna) il numero estratto
-                    self.cartelle_assegnate[i].cartella[riga][colonna]=0
+                    self.cartelle_assegnate[i].cartella[riga][colonna]=-1
             
     """ 
     Metodo check_vincita : 
         Controllo delle vincite(interi, 2--> ambo, 3--> terno...) del giocatore
-        Per la verifica della Tombola si verifica che nella cartella siano presenti solo 0 (n estratto) e -1 (casella vuota)
+        Per la verifica della Tombola si verifica che nella cartella siano presenti solo 0 e -1
     """
    
     def check_vincita(self,vincita): 
@@ -109,9 +109,9 @@ class Giocatore:
             for riga in range(3):
                 print('[ ',end='')
                 for colonna in range(9):
-                    if self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == -1: #casella vuota --> stampo spazio vuoto
+                    if self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == 0: #casella vuota --> stampo spazio vuoto
                         print(' ',end=' ')
-                    elif self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == 0: #numer estratto contrassegnato con *
+                    elif self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == -1: #numer estratto contrassegnato con *
                         print('*',end=' ')
                     else:
                         print(int(self.cartelle_assegnate[i].visualizza_eleme_cartella(riga,colonna)),end=' ')
