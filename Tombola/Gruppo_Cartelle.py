@@ -140,7 +140,7 @@ class Gruppo_Cartelle:
      for i in range (6):
       cartella_da_riempire = self.single_cartella[i]
       for j in range (3):
-          for k in range (8):
+          for k in range (9):
             if cartella_da_riempire[j][k] == 1:
               num = random.choise(numeri[k])
               cartella_da_riempire[j][k] = num 
