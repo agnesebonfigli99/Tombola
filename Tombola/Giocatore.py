@@ -53,7 +53,7 @@ class Giocatore:
     """ 
     Metodo check_vincita : 
         Controllo delle vincite(interi, 2--> ambo, 3--> terno...) del giocatore
-        Per la verifica della Tombola si verifica che nella cartella siano presenti solo 0 (n estratto) e -1 (casella vuota)
+        Per la verifica della Tombola si verifica che nella cartella siano presenti solo 0 e -1
     """
    
     def check_vincita(self,vincita): 

@@ -30,7 +30,7 @@ class Gruppo_Cartelle:
         exit=False
         while exit == False:
           cartella=Cartella.genera_cartella()
-          if self.cartella.casella_occupata(2,8)!=1:
+          if self.cartella.casella_occupata(2,8)!=0:
              exit=True 
         self.lista_cartelle[0] = cartella     
         for i in range(1,6):
@@ -42,7 +42,7 @@ class Gruppo_Cartelle:
     def single_cartella(self,i):
         return self.lista_cartelle[i]
     
-    '''tale metodo verifica che la somma degli elementi sulla prima colonna sia uguale a 9 (condition == True)'''
+    ''' La prima colonna deve avare 9 caselle occupate (9 elementi) --> tale metodo verifica che il numero degli elementi sulla prima colonna sia uguale a 9 (condition == True)'''
     def verifica_prima_colonna(self):
         l=[]
         for k in range(6):
@@ -66,7 +66,7 @@ class Gruppo_Cartelle:
           condiz_uscita=self.verifica_prima_colonna()
         return self.lista_cartelle
     
-    '''dato il gruppo di cartelle che rispetta la condizione sulla prima colonna si impone analogamente che venga rispettata la condizione sull' ultima colonna (11 elementi totali tra le sei cartelle del gruppo)'''
+    '''l'ultima colonna deve contenere 11 elementi --> tale metodo verifica che sull'ultima colonna il numero di elementi sia pari 11'''
     def verifica_ultima_colonna(self):
         self.primo_gruppo()
         l=[]
@@ -140,7 +140,7 @@ class Gruppo_Cartelle:
      for i in range (6):
       cartella_da_riempire = self.single_cartella[i]
       for j in range (3):
-          for k in range (8):
+          for k in range (9):
             if cartella_da_riempire[j][k] == 1:
               num = random.choise(numeri[k])
               cartella_da_riempire[j][k] = num 
