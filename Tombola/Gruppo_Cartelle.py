@@ -30,7 +30,7 @@ class Gruppo_Cartelle:
         exit=False
         while exit == False:
           cartella=Cartella.genera_cartella()
-          if self.cartella.casella_occupata(2,8)!=1:
+          if self.cartella.casella_occupata(2,8)!=0:
              exit=True 
         self.lista_cartelle[0] = cartella     
         for i in range(1,6):
