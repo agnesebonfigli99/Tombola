@@ -25,7 +25,7 @@ class Cartella:
 
         self.cartella = np.zeros((3, 9))
 
-        self.contatore_elem_c = np.zeros((1, 9))
+        self.contatore_elem_c = np.zeros((1,9))
 
         self.contatore_elem_r = np.zeros((3, 1))
 
