@@ -42,7 +42,7 @@ class Gruppo_Cartelle:
     def single_cartella(self,i):
         return self.lista_cartelle[i]
     
-    '''tale metodo verifica che la somma degli elementi sulla prima colonna sia uguale a 9 (condition == True)'''
+    ''' La prima colonna deve avare 9 caselle occupate (9 elementi) --> tale metodo verifica che il numero degli elementi sulla prima colonna sia uguale a 9 (condition == True)'''
     def verifica_prima_colonna(self):
         l=[]
         for k in range(6):
@@ -66,7 +66,7 @@ class Gruppo_Cartelle:
           condiz_uscita=self.verifica_prima_colonna()
         return self.lista_cartelle
     
-    '''dato il gruppo di cartelle che rispetta la condizione sulla prima colonna si impone analogamente che venga rispettata la condizione sull' ultima colonna (11 elementi totali tra le sei cartelle del gruppo)'''
+    '''l'ultima colonna deve contenere 11 elementi --> tale metodo verifica che sull'ultima colonna il numero di elementi sia pari 11'''
     def verifica_ultima_colonna(self):
         self.primo_gruppo()
         l=[]
