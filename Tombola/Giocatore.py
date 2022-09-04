@@ -38,7 +38,7 @@ class Giocatore:
     """
     Metodo check_numero :
     Dopo aver estratto il numero (intero) il giocatore controlla se le sue cartelle lo possiedono.
-    0 --> al posto del numero estratto presente sulla cartella 
+    -1 --> al posto del numero estratto presente sulla cartella 
     
     """
     
