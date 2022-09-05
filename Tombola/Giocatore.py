@@ -38,17 +38,20 @@ class Giocatore:
     """
     Metodo check_numero :
     Dopo aver estratto il numero (intero) il giocatore controlla se le sue cartelle lo possiedono.
-    0 --> al posto del numero estratto presente sulla cartella 
+    -1 --> al posto del numero estratto presente sulla cartella 
     
     """
     
     def check_num(self, num_estratto): 
         for i in range(0,len(self.cartelle_assegnate)):
             for riga in range(0,3):
-                if self.cartelle_assegnate[i].cartella[riga][colonna]==num_estratto: 
+                +for colonna in range(0,9):
+                    if self.cartelle_assegnate[i].cartella[riga][colonna]==num_estratto:
+                        self.cartelle_assegnate[i].cartella[riga][colonna]=-1
+                    
                     #l'iesima cartella della lista di cartelle del giocatore
                     #presenta in una posizione (individuata da riga e colonna) il numero estratto
-                    self.cartelle_assegnate[i].cartella[riga][colonna]=-1
+                    
             
     """ 
     Metodo check_vincita : 
