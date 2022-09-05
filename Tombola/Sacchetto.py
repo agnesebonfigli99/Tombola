@@ -32,15 +32,17 @@ class Sacchetto:
         l = [] #inizializzo una lista l inizialmente vuota che verrà riempita con i numeri estratti.
         for i in range(1,91): 
 
-            self.mischia = random.shuffle(self.n_sacchetto) #riorganizzo l'ordine della lista n_sacchetto.
+            random.shuffle(self.n_sacchetto) #riorganizzo l'ordine della lista n_sacchetto.
 
-            self.estratto = self.n_sacchetto[0] #il numero estratto è il primo numero della lista n_sacchetto di cui abbiamo cambiato l'ordine.
+            estratto = self.n_sacchetto[0] #il numero estratto è il primo numero della lista n_sacchetto di cui abbiamo cambiato l'ordine.
 
             self.n_sacchetto.pop(0) #rimuovo l'elemento estratto dal sacchetto in modo che non ci siano ripetizioni nell'estrazioni
 
-            l.append(self.estratto) #lista riempita
+            l.append(estratto) #lista riempita
 
-            print(f"Il numer estratto è", self.estratto, l)
+            print(f"Il numer estratto è", estratto, l)
+            
+            return estratto
         
 
 estrazione = Sacchetto()
