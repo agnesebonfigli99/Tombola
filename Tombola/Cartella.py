@@ -174,21 +174,6 @@ class Cartella:
 
         return self.cartella
 
-    """
-    Metodo numero_estratto: metodo che restituisce un booleano al fine di controllare se il numero nella posizione specificata
-    da indice riga e indice colonna è già stato estratto
-    True--> numero estratto (=-1 per convenzione del programma)
-    """
-
-    def numero_estatto(self, i_riga, i_colonna):
-
-        if self.cartella[i_riga][i_colonna] == -1:
-
-            return True
-
-        else:
-
-            return False
 
     """
     Metodo canc_cartella_tale metodo rende nuovamente la cartella una matrice di zeri e azzera i contatori
@@ -237,3 +222,14 @@ class Cartella:
             self.aggiungi_numero(2, c, 1)
 
         return self.cartella
+
+    """
+    Metodo segna_numero: metodo che controlla se sulla casella è presente il numero estratto e lo segna sostituendolo con  -1
+    """
+
+    def segna_numero(self,num_estratto):
+        for riga in range(0,3):
+            for colonna in range(0,9):
+                if self.cartella[riga][colonna]==num_estratto:
+                    self.cartella[riga][colonna]=-1
+                    print(self.cartella)
