@@ -67,6 +67,21 @@ class Cartellone:
 
     """metodo verifica_vincite_cartellone
      per verificare le vincite effettuate dal cartellone"""
+    
+    """
+    Metodo segna_n_estratto: metodo che riceve in input il numero estratto e l'indice della cartella che lo contiene e sostituisce il numero 
+    estratto con -1
+    """
+    
+    def segna_n_estratto(self,num_estratto):
+     for i in range(6):
+      for riga in range(3):
+       for index in range(5):
+        if self.cartellone[i][riga][index]==num_estratto:
+         self.cartellone[i][riga][index]=-1
+         return self.cartellone
+  
+         
 
     def verifica_vincite_cartellone(self,vincita,id_cartella):
         """attributi:" \
