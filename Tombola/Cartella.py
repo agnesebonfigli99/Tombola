@@ -17,19 +17,21 @@ riga e decerementato di 1 se eliminato
 """
 
 import numpy as np
-
+import random
 
 class Cartella:
 
+    "Viene creata la cartella come matrice di zeri, "
+
     def __init__(self, cartella=None, contatore_elem_c=None, contatore_elem_r=None):
 
-        self.cartella = np.zeros((3, 9))
+        self.cartella = np.zeros((3,9))
 
-        self.contatore_elem_c = np.zeros((1,9))
+        self.contatore_elem_c = np.zeros(9)
 
-        self.contatore_elem_r = np.zeros((3, 1))
-
-    "Una volta creata la cartella come matrice di zeri, "
+        self.contatore_elem_r = np.zeros(3)
+       
+  
 
     """ Metodo incrementa_contatore: metodo che aggiorna (incrementando) i contatori rispettivamente degli elementi sulle righe e sulle colonne
         ogni qual volta viene aggiunto un nuovo numero """
@@ -67,7 +69,7 @@ class Cartella:
         self.cartella[i_riga, i_colonna] = num
 
         self.incrementa_contatore(i_riga, i_colonna)
-
+        
     """
     Metodo rimuovi_numero: metodo che rimuove un numero nella cartella nella posizione specificata gli indici di riga e colonna,
     e per ogni elemento aggiunto utilizza il metodo decrementa_contatore
@@ -78,12 +80,13 @@ class Cartella:
         self.cartella[i_riga, i_colonna] = 0
 
         self.decrementa_contatore(i_riga, i_colonna)
+        
 
     def azzera_contatore(self):
 
-        self.contatore_elem_c = np.zeros((1, 9))
+        self.contatore_elem_c = np.zeros(9)
 
-        self.contatore_elem_r = np.zeros((3, 1))
+        self.contatore_elem_r = np.zeros(3)
 
     """
     Metodo visualizza_elem_cartella: metodo che restituisce l'elemento (int) presente nella cartella che si trova nella posizione
@@ -102,11 +105,20 @@ class Cartella:
 
     def inizializza_contatori(self):
 
-        self.contatore_elem_c = np.zeros((1, 9))
+        self.contatore_elem_c = np.zeros(9)
 
-        self.contatore_elem_r = np.zeros((3, 1))
+        self.contatore_elem_r = np.zeros(3)
 
+    
     """
+    metodo che conta gli elelemti di una colonna 
+    """
+    def conta_elementi_colonne(self, i_colonna):
+        return self.contatore_elem_c[i_colonna]
+
+
+
+    """  
     Metodo check_vincolo_col: metodo che verifica che sia rispettata la specifica sulle colonne --> da 1 a 3 elementi su ognuna
     restituisce in output un booleano (True se la condizione è verificata, False altrimenti)
     """
@@ -127,7 +139,7 @@ class Cartella:
     """
 
     def check_vincolo_r(self, i_riga):
-
+       
         if self.contatore_elem_r[i_riga] == 5:
 
             return True
@@ -138,7 +150,7 @@ class Cartella:
 
     """
     Metodo casella_vuota: metodo che controlla se la casella individuata da indice riga e indice colonna è vuota, ricordiamo che
-    nel programma una caseslla libera contiene il numero 0
+    nel programma una casella libera contiene il numero 0
     Restituisce in output un booleano: True: --> se la casella è vuota
     """
 
@@ -174,6 +186,21 @@ class Cartella:
 
         return self.cartella
 
+    """
+    Metodo numero_estratto: metodo che restituisce un booleano al fine di controllare se il numero nella posizione specificata
+    da indice riga e indice colonna è già stato estratto
+    True--> numero estratto (=-1 per convenzione del programma)
+    """
+
+    def numero_estatto(self, i_riga, i_colonna):
+
+        if self.cartella[i_riga][i_colonna] == -1:
+
+            return True
+
+        else:
+
+            return False
 
     """
     Metodo canc_cartella_tale metodo rende nuovamente la cartella una matrice di zeri e azzera i contatori
@@ -185,51 +212,44 @@ class Cartella:
     """
     metodo posizione_libera_colonna:restituisce in una lista gli indici delle posizioni libere per riga.
     """
-    def posizione_libera_colonna(self,i):
+    def posizione_libera_riga(self,j):
         indici=[]
-        for j in range(9):
-            if self.cartella[i][j]==-1:
-                indici.append(j)
+        for i in range(3):
+            if self.cartella[i][j]==0:
+                indici.append(i)
             else:
                 pass
         return indici
 
 
-        """"
-        Metodo genera_cartella: il metodo genera_cartella si occupa di inserire in 5 posizioni randomiche per ogni riga il numero 1 per contrassegnare che 
-        quella casella conterrà un numero
-        ---> riferimento usato nella classe GruppoCartelle per il riempimento
-        La cartella finora è una matrice di zeri
-        """
+    '''il metodo genera_posizioni_cartella inserisce un numero 1 per ogni colonna (in totale quindi 9), verificando che per ogni riga non ci siano più di 5 numeri '''
 
+    def genera_posizioni_cartella(self):
+        self.canc_cartella()
+        for j in range (9):
+          rigacorretta=False
+          while not rigacorretta:
+            c = random.randrange(0,3) 
+            if not self.check_vincolo_r(c):
+              self.aggiungi_numero(c, j, 1)
+              rigacorretta=True
+            else:
+              rigacorretta=False   
 
+    ''' il metodo genera_cartella inserisce i restanti sei 1 (per arrivare ai 15 numeri per cartella), verificando che non ci siano più di 5 numeri per riga '''
+                   
     def genera_cartella(self):
-        self.cartella
-        self.azzera_contatore()
-        for i in range(5):
-            z = self.posizione_libera_colonna(0)
-            c = random.choice(z)
-            self.aggiungi_numero(0, c, 1)
-
-        for i in range(5):
-            z = self.posizione_libera_colonna(1)
-            c = random.choice(z)
-            self.aggiungi_numero(1, c, 1)
-
-        for i in range(5):
-            z = self.posizione_libera_colonna(2)
-            c = random.choice(z)
-            self.aggiungi_numero(2, c, 1)
-
-        return self.cartella
-
-    """
-    Metodo segna_numero: metodo che controlla se sulla casella è presente il numero estratto e lo segna sostituendolo con  -1
-    """
-
-    def segna_numero(self,num_estratto):
-        for riga in range(0,3):
-            for colonna in range(0,9):
-                if self.cartella[riga][colonna]==num_estratto:
-                    self.cartella[riga][colonna]=-1
-                    print(self.cartella)
+       self.genera_posizioni_cartella()
+       exitcondition=False
+       while not exitcondition:
+           j=random.randint(0,8)
+           if len(self.posizione_libera_riga(j))!=0:
+             z=self.posizione_libera_riga(j)   
+             i=random.choice(z)
+             if not self.check_vincolo_r(i):
+                 self.aggiungi_numero(i, j, 1)
+             if self.check_vincolo_r(0):
+               if self.check_vincolo_r(1):
+                 if self.check_vincolo_r(2):               
+                    exitcondition=True    
+       return self.cartella
