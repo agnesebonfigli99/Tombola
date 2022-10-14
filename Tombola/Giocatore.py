@@ -73,9 +73,9 @@ class Giocatore:
         Per la verifica della Tombola si verifica che nella cartella siano presenti solo 0 e -1
     """
    
-    def check_vincita(self,vincita): 
+    def check_vincita(self,vincite): 
          for i in range(self.n_cartelle):
-            if vincita==5:
+            if vincite==5:
                                     
                 occorenze = np.unique(self.cartelle_assegnate[i].cartella)
                 
@@ -83,33 +83,33 @@ class Giocatore:
                     #quindi ci sono solo 0 e -1
                     print('Tombola!')
                 
-                    vincita = 6     
+                    vincite = 6     
                 else:                 
-                    return vincita
+                    return vincite
             
             else:
                 for riga in range(0,3):
                     contatore=0
-                    vincita_aggiornata = vincita+1      
+                    vincita_aggiornata = vincite+1      
                     for colonna in range(0,9):
                         if self.cartelle_assegnate[i].numero_estratto(riga,colonna):
                             contatore=contatore+1
                     if contatore == vincita_aggiornata:
-                        vincita = vincita_aggiornata                       
-                        if vincita==2 :
+                        vincite = vincita_aggiornata                       
+                        if vincite==2 :
                             print('Ambo')
-                            return vincita                   
-                        elif vincita==3 :
+                            return vincite                   
+                        elif vincite==3 :
                             print('Terna')
-                            return vincita  
-                        elif vincita==4 :
+                            return vincite  
+                        elif vincite==4 :
                             print('Quaterna')
-                            return vincita  
+                            return vincite  
                             
-                        elif vincita==5 :
+                        elif vincite==5 :
                             print('Cinquina')
-                            return vincita
-         return vincita 
+                            return vincite
+         return vincite     
                     
     """
     Metodo visualizza_cartelle_giocatore: 
