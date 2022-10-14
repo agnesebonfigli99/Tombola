@@ -253,3 +253,8 @@ class Cartella:
                  if self.check_vincolo_r(2):               
                     exitcondition=True    
        return self.cartella
+
+if __name__ == "__main__":
+    cartella1=Cartella()   
+    cartella1.genera_cartella()    
+    print(cartella1) 
