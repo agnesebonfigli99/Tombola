@@ -32,7 +32,7 @@ class Tavolo:
         ''' serve metodo che genera il gruppo di cartelle richieste dal giocatore ''' 
         #gruppo
         cartelle_disponibili=[]
-        cartelle_disponibili = Gruppo_Cartelle.crea_gruppi_necessari(self.cartelle_richieste)
+        cartelle_disponibili = Gruppo_Cartelle.Gruppo_Cartelle.crea_gruppi_necessari(self.cartelle_richieste)
         giocatori=[] # crea i giocatori (oggetti) e li inserisce nell'omonima lista
         
         for i in range(0,self.n_giocatori):
