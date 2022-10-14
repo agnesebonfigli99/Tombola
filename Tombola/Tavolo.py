@@ -5,7 +5,7 @@ Created on Wed Aug 31 16:58:13 2022
 @author: franc
 """
 
-import Gruppo
+import Gruppo_Cartelle
 import Giocatore
 import random
 import Cartellone
@@ -45,7 +45,7 @@ class Tavolo:
                 giocatori[i].aggiungi_cartella(cartelle_disponibili[index_cartella])
                 cartelle_disponibili.pop(index_cartella)
                 
-     return giocatori
+        return giocatori
             
       
     """
