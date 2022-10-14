@@ -17,11 +17,6 @@ class Sacchetto:
         for i in range(1,91): 
 
             self.n_sacchetto.append(i)
-    """
-    Metodo mostra_sacchetto: metodo che permette di visualizzare il sacchetto di numeri
-    """
-    def mostra_sacchetto(self): 
-        print(f"il sacchetto è", self.n_sacchetto)
         
     """
     Metodo estrai numero: metodo che estrae un numero dal sacchetto senza ripetizioni e lo aggiunge ad una lista. 
@@ -40,12 +35,8 @@ class Sacchetto:
 
             l.append(estratto) #lista riempita
 
-            print(f"Il numer estratto è", estratto, l)
+            print(f"Il numer estratto è", estratto)
             
             return estratto
-        
 
-estrazione = Sacchetto()
-estrazione.mostra_sacchetto()
-estrazione.estrai_numero()
 
