@@ -192,7 +192,7 @@ class Cartella:
     True--> numero estratto (=-1 per convenzione del programma)
     """
 
-    def numero_estatto(self, i_riga, i_colonna):
+    def numero_estratto(self, i_riga, i_colonna):
 
         if self.cartella[i_riga][i_colonna] == -1:
 
