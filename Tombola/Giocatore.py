@@ -36,12 +36,36 @@ class Giocatore:
         self.cartelle_assegnate.append(nuova_cartella)
         
     """
-    Metodo check_numero :
+    Metodo controllo_numero :
     Dopo aver estratto il numero (intero) il giocatore controlla se le sue cartelle lo possiedono.
-    -1 --> al posto del numero estratto presente sulla cartella 
+    -1 --> al posto del numero estratto presente sulla cartella.
+    Verifico che il giocatore abbia o meno il numero estratto in una delle sue cartelle
+    ed in caso positivo viene posto uguale a -1 per 'segnarlo'
+    numero_estratto (int) : il valore estratto dal tabellone
     
     """
+    def controllo_numero(self,numero_estratto):
+        
+        if numero_estratto==90:
+            colonna = 8
+        else:
+            colonna=numero_estratto//10
+        stampa = True                                # Questo valore mi dice se devo stampare il fatto di avere o meno un numero
+                                                    # viene inizializzato a true quindi se il giocatore ha in una delle sue cartelle il numero
+                                                    # viene stampato un messaggio e reso false la variabile, cosi da non stampare il messaggio nel caso in cui
+                                                    # il giocatore abbia nuovamente il numero in altre cartelle
+        for i in range(0,len(self.cartelle_assegnate)):
+            for riga in range(0,3):
+                if self.cartelle_assegnate[i].cartella[riga][colonna]==numero_estratto:    # Se la cartella presenta il numero
+                    self.cartelle_assegnate[i].cartella[riga][colonna]=-1                  # Viene sostituito un -1 
                     
+                    
+                    if stampa:                     # Tale if è necessario per non stampare più 
+                                                        # di una volta il messaggio qualora il giocatore
+                                                        # abbia lo stesso numero in piu cartelle
+                        print('Ho il '+str(numero_estratto))
+                        stampa = False
+                                                         
             
     """ 
     Metodo check_vincita : 
@@ -85,7 +109,7 @@ class Giocatore:
                         elif vincita==5 :
                             print('Cinquina')
                             return vincita
-                        return vincita 
+         return vincita 
                     
     """
     Metodo visualizza_cartelle_giocatore: 
