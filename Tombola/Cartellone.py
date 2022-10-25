@@ -75,8 +75,8 @@ class Cartellone:
        for index in range(5):
         if self.cartellone[i][riga][index]==num_estratto:
          self.cartellone[i][riga][index]=-1
-         indice_cartella = i 
-         return indice_cartella
+         id_cartella = i 
+         return id_cartella
   
          
 
@@ -106,7 +106,7 @@ class Cartellone:
                  vincita_aggiornata=vincite+1
 
                  for colonna in range (0,5):
-                     if self.cartellone[id_cartella][riga,colonna]==0:
+                     if self.cartellone[id_cartella][riga,colonna]==-1:
                          contatore=contatore+1
                  if  contatore==vincita_aggiornata:
                      vincite=vincita_aggiornata
