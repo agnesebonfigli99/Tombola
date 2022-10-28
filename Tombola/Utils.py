@@ -85,3 +85,18 @@ def check_lista_cartelle(n_giocatori, lista_cartelle):
             print('\n- ERRORE -  Il numero delle cartelle non deve superare il limite di 5 cartelle per giocatore\n')
             exit()
     return lista_cartelle
+
+def domanda_stampa(n_giocatori,giocatori,cartellone):
+    """
+    Tale metodo viene chiamato dal main ad ogni estrazione e permette di mostrare
+    le cartelle dei giocatori in gioco mediante il metodo 'visualizza_cartelle_giocatore' della
+    classe Giocatore()
+    Vengono mostrate le cartelle dei giocatori se inserito in input 'yes' o 'y', altrimenti viene stampato un messaggio e si continua il gioco
+    """
+    boolean = input('Vuoi vedere le cartelle dei giocatori? y/n : ')
+    
+    if boolean == 'y' or boolean == 'yes': 
+        for i in range(n_giocatori):
+            giocatori[i].visualizza_cartelle_giocatore()
+    else:
+        print('Ok, prossima estrazione')
