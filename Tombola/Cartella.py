@@ -99,15 +99,7 @@ class Cartella:
 
         return elemento
 
-    """
-    Metodo inializza_contatori: metodo che rinizializza i contatori degli elementi su righe e colonne azzerandoli
-    """
-
-    def inizializza_contatori(self):
-
-        self.contatore_elem_c = np.zeros(9)
-
-        self.contatore_elem_r = np.zeros(3)
+   
 
     
     """
@@ -117,21 +109,6 @@ class Cartella:
         return self.contatore_elem_c[i_colonna]
 
 
-
-    """  
-    Metodo check_vincolo_col: metodo che verifica che sia rispettata la specifica sulle colonne --> da 1 a 3 elementi su ognuna
-    restituisce in output un booleano (True se la condizione è verificata, False altrimenti)
-    """
-
-    def check_vincolo_col(self, i_colonna):
-
-        if self.contatore_elem_c[i_colonna] >= 1:
-
-            return True
-
-        else:
-
-            return False
 
     """
     Metodo check_vincolo_r:metodo che verifica che sia rispettata la specifica sulle righe --> 5 elementi su ognuna
@@ -148,21 +125,7 @@ class Cartella:
 
             return False
 
-    """
-    Metodo casella_vuota: metodo che controlla se la casella individuata da indice riga e indice colonna è vuota, ricordiamo che
-    nel programma una casella libera contiene il numero 0
-    Restituisce in output un booleano: True: --> se la casella è vuota
-    """
-
-    def casella_vuota(self, i_riga, i_colonna):
-
-        if self.visualizza_elem_cartella(i_riga, i_colonna) == 0:
-
-            return True
-
-        else:
-
-            return False
+ 
 
     """
     Metodo casella_occuppata: metodo che controlla se la casella individuata da indice riga e indice colonna è occupata, se la
@@ -180,11 +143,7 @@ class Cartella:
 
             return False
 
-    """Metodo mostra_cartella: metodo che restituisce la cartella al fine di visualizzarla"""
-
-    def mostra_cartella(self):
-
-        return self.cartella
+   
 
     """
     Metodo numero_estratto: metodo che restituisce un booleano al fine di controllare se il numero nella posizione specificata
