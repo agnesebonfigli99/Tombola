@@ -22,12 +22,7 @@ Un gruppo di 6 cartelle deve verificare le seguenti condizioni:
 - la prima colonna contiene i numeri da 1 a 9, la seconda i numeri da 10 a 19, la terza i numeri da 20 a 29,... la nona colonna contiene i numeri da 80 a 90
 - quando presente in una cartella, il numero 90 occupa sempre la casella nell'angolo in basso a destra (riga 3, colonna 9)
 - ogni numero da 1 a 90 deve essere presente su una e una sola cartella
-
-Importare la libreria "unittest" e scegliere la classe su cui fare Unit Testing. 
-
-Creare la classe Cartella, rendere Cartella un file JSON e importarlo per le operazioni successive. 
-
-
+ 
 # Istruzioni per giocare
 
 Per giocare digitare da linea di comando:
