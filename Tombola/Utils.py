@@ -58,7 +58,7 @@ def check_lista_cartelle(n_giocatori, lista_cartelle):
     """
     if len(lista_cartelle)!=n_giocatori:    # se la lunghezza della lista di cartelle inserita 
                                             # NON corrisponde al numero di giocatori 
-        print('\n- ERRORE -  Vi sono giocatori a cui non è stata assegnata alcuna cartella\n')
+        print('\n- ERRORE -  Assegnazione incoerente\n')
         
         if len(lista_cartelle)<n_giocatori:
             sc=n_giocatori-len(lista_cartelle) # valore che mi dice a quanti 
