@@ -77,16 +77,16 @@ class Cartellone:
          return id_cartella
   
          
-    """metodo verifica_vincite_cartellone per verificare le vincite effettuate dal cartellone"""
-    def verifica_vincite_cartellone(self,vincite,id_cartella):
-        """attributi:" \
+    """metodo verifica_vincite_cartellone per verificare le vincite effettuate dal cartellone
+        attributi:" \
          vincita: intero indicante la vincita, 2--> ambo 3--> terno, ecc..
          id_cartella: intero che identifica la cartella a cui appartiene il numero estratto, cioè la cartella per la quale si
-         verifica la vincita """
-
-        """input: vincita, id_cartella
-          output: vincita
-         quando il numero viene estratto viene sostituito con 0"""
+         verifica la vincita 
+        input: vincite, id_cartella
+        output: vincite
+        quando il numero viene estratto viene sostituito con 0
+    """
+    def verifica_vincite_cartellone(self,vincite,id_cartella):
 
         if vincite==5:
             occorrenze=np.unique(self.cartellone[id_cartella]) #per verificare la vincita
