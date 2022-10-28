@@ -61,8 +61,6 @@ class Cartellone:
                               self.cartellone[i][riga][index] = p_dx[index] + (riga + i + 1) * 10
 
 
-    """metodo verifica_vincite_cartellone
-     per verificare le vincite effettuate dal cartellone"""
     
     """
     Metodo segna_n_estratto: metodo che riceve in input il numero estratto e l'indice della cartella che lo contiene e sostituisce il numero 
@@ -79,7 +77,7 @@ class Cartellone:
          return id_cartella
   
          
-
+    """metodo verifica_vincite_cartellone per verificare le vincite effettuate dal cartellone"""
     def verifica_vincite_cartellone(self,vincite,id_cartella):
         """attributi:" \
          vincita: intero indicante la vincita, 2--> ambo 3--> terno, ecc..
