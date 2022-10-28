@@ -84,7 +84,7 @@ class Cartellone:
          verifica la vincita 
         input: vincite, id_cartella
         output: vincite
-        quando il numero viene estratto viene sostituito con 0
+        quando il numero viene estratto viene sostituito con -1
     """
     def verifica_vincite_cartellone(self,vincite,id_cartella):
 
@@ -100,7 +100,7 @@ class Cartellone:
 
         else:
              for riga in range(0,3):
-                 contatore=0 #per contare gli 0 sulla riga di una certa cartella
+                 contatore=0 #per contare i -1 sulla riga di una certa cartella
                  vincita_aggiornata=vincite+1
 
                  for colonna in range (0,5):
