@@ -57,6 +57,7 @@ Sacchetto=Sacchetto.Sacchetto()
 for i in range(1,91):
     numero_estratto = Sacchetto.estrai_numero()
     vincite = check_estrazione_corrente(giocatori, numero_estratto, vincite, cartellone)
+    Utils.domanda_stampa(n_giocatori, giocatori, cartellone)
     if vincite==6: # Se è stata fatta tombola -> termina il gioco
         print('\n------------------- FINE PARTITA ---------------------')
         sys.exit()
