@@ -131,5 +131,5 @@ class Giocatore:
                     elif self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna) == -1: #numer estratto contrassegnato con *
                         print('*',end=' ')
                     else:
-                        print(int(self.cartelle_assegnate[i].visualizza_eleme_cartella(riga,colonna)),end=' ')
+                        print(int(self.cartelle_assegnate[i].visualizza_elem_cartella(riga,colonna)),end=' ')
                 print(']')
