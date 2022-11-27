@@ -5,7 +5,7 @@ import numpy as np
 
 class Cartellone:
     def __init__(self, cartellone=None):  #in questo modo il costruttore crea un solo oggetto cartellone in fase di esecuzione
-        self.cartellone=[]  #martice vuota"
+        self.cartellone=[]  #lista vuota"
 
     """ Metodo crea_cartellone: il metodo crea il cartellone generando le cartelle che lo costituiscono (martici 3x5) """
     def crea_cartellone(self):
@@ -63,7 +63,7 @@ class Cartellone:
 
     
     """
-    Metodo segna_n_estratto: metodo che riceve in input il numero estratto e l'indice della cartella che lo contiene e sostituisce il numero 
+    Metodo segna_n_estratto: metodo che riceve in input il numero estratto e restituisce  l'indice della cartella che lo contiene e sostituisce il numero 
     estratto con -1
     """
     
