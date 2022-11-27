@@ -169,7 +169,7 @@ class Cartella:
         self.azzera_contatore()
 
     """
-    metodo posizione_libera_colonna:restituisce in una lista gli indici delle posizioni libere per riga.
+    metodo posizione_libera_riga:restituisce in una lista gli indici delle posizioni libere per riga.
     """
     def posizione_libera_riga(self,j):
         indici=[]
