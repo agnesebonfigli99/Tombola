@@ -63,7 +63,7 @@ class Cartellone:
 
     
     """
-    Metodo segna_n_estratto: metodo che riceve in input il numero estratto e l'indice della cartella che lo contiene e sostituisce il numero 
+    Metodo segna_n_estratto: metodo che riceve in input il numero estratto e restituisce  l'indice della cartella che lo contiene e sostituisce il numero 
     estratto con -1
     """
     
